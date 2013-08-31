@@ -11,7 +11,7 @@ socket.on('identify', function() {
     console.log(user);
     if (user) {
         console.log('emitting connect event');
-        socket.emit('registerClient', { user: user, token: 'hjdIO783HKL782HK@&*73H9&@!(jd', plugin: true });
+        socket.emit('registerClient', { user: user, token: '', plugin: true });
 
         var opt = {
             type: "basic",
