@@ -2,11 +2,7 @@
 
 (function (chrome) {
 
-    var tab = {};
-
-    chrome.tabs.getSelected(null, function (data) {
-        tab.id = data.id;
-        tab.url = data.url;
+    chrome.tabs.getSelected(null, function (tab) {
         document.getElementById('pageUrl').innerText = tab.url;
     });
 

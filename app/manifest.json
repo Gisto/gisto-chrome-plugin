@@ -9,9 +9,7 @@
   },
   "default_locale": "en",
   "background": {
-    "scripts": [
-      "scripts/background.js"
-    ]
+   "page": "background.html"
   },
   "browser_action": {
     "default_icon": {
@@ -39,6 +37,7 @@
   ],
   "permissions": [
     "tabs",
+    "background",
     "http://*/*",
     "https://*/*"
   ]
