@@ -19,6 +19,7 @@
     "default_title": "Send to Gisto",
     "default_popup": "popup.html"
   },
+  "options_page": "options.html",
   "content_scripts": [
     {
       "matches": [
@@ -38,6 +39,7 @@
   "permissions": [
     "tabs",
     "background",
+    "notifications",
     "http://*/*",
     "https://*/*"
   ]
