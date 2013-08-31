@@ -5,7 +5,6 @@ chrome.runtime.onInstalled.addListener(function (details) {
 });
 
 var socket = io.connect('http://localhost:3000/');
-var notificationCounter = 0;
 
 socket.on('identify', function() {
     var user = localStorage.getItem('githubUser');
@@ -36,9 +35,4 @@ socket.on('receiveNotification', function(data) {
     };
 
     chrome.notifications.create('gisto_gist_received', options, function() {});
-
-    chrome.browserAction.setBadgeText({
-        text: ++notificationCounter + ""
-    });
-
 });
