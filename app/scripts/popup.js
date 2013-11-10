@@ -13,6 +13,16 @@
         }
     );
 
+    var sendButton = document.querySelector('#gisto-send');
+    sendButton.addEventListener('click', function(e) {
+       alert('button clicked');
+
+        chrome.runtime.sendMessage({type: 'send', data: 'hello i am here'}, function(response) {
+            alert('recieved response');
+        });
+
+    });
+
     chrome.tabs.executeScript(null, {code: "chrome.extension.sendRequest({selection: window.getSelection().toString() });"});
 
 

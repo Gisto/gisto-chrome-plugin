@@ -11,7 +11,7 @@ socket.on('identify', function() {
     console.log(user);
     if (user) {
         console.log('emitting connect event');
-        socket.emit('registerClient', { user: user, token: 'hjdIO783HKL782HK@&*73H9&@!(jd', plugin: true });
+        socket.emit('registerClient', { user: user, token: 'hjdIO783HKL782HK@&*73H9&@!(jd', useragent: 'plugin' });
 
         var opt = {
             type: "basic",
@@ -35,4 +35,12 @@ socket.on('receiveNotification', function(data) {
     };
 
     chrome.notifications.create('gisto_gist_received', options, function() {});
+});
+
+
+// event listeners
+chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
+    if (message && message.type === 'send') {
+        // title, body, refUrl
+    }
 });
