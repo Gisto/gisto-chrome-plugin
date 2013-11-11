@@ -41,6 +41,12 @@ socket.on('receiveNotification', function(data) {
 // event listeners
 chrome.runtime.onMessage.addListener(function(message, sender, sendResponse) {
     if (message && message.type === 'send') {
-        // title, body, refUrl
+        // url, data, title
+        socket.emit('sendNotification', {
+            recipient: localStorage.getItem('githubUser'),
+            type: 'create',
+            files: message.data,
+            title: message.title
+        });
     }
 });
