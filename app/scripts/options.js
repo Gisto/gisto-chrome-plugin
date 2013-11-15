@@ -47,6 +47,7 @@ function checkAuthorized() {
         },
         dataType: 'json'
     }).success(function(data) {
+            window.localStorage.setItem('accessToken', data.access_token);
         $.when(getUser(data.access_token)).done(function(data){
                 window.localStorage.setItem("githubUser", data.login);
                 window.location.href = "chrome-extension://nchjedfphpbelmkcgbbokaopjmocjfgi/options.html";
